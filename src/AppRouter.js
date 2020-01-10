@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Login from './Pages/Login/Login'
+import './AppRouter.css'
+
 class AppRouter extends Component {
     constructor(props) {
         super(props);
@@ -6,7 +9,9 @@ class AppRouter extends Component {
     }
     render() { 
         return (
-            <div>hello</div>
+            <div>
+                <Login></Login>
+            </div>
          );
     }
 }
