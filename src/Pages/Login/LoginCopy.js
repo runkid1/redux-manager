@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { Form, Icon, Input, Button, Checkbox } from "antd";
-import bg from "../../static/bg.jpg";
-import "./Login.css";
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
+class NormalLoginForm extends React.Component {
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        console.log('Received values of form: ', values);
+      }
+    });
+  };
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-        <div className="bg">
-            <Form onSubmit={this.handleSubmit} className="login-form">
+      <Form onSubmit={this.handleSubmit} className="login-form">
         <Form.Item>
           {getFieldDecorator('username', {
             rules: [{ required: true, message: 'Please input your username!' }],
@@ -49,21 +49,10 @@ class Login extends React.Component {
           Or <a href="">register now!</a>
         </Form.Item>
       </Form>
-      </div>
-
-    )
+    );
   }
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values);
-      }
-    });
-  };
 }
 
+const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(NormalLoginForm);
 
-const WrappedRegistrationForm = Form.create()(Login);
-export default WrappedRegistrationForm;
-// export default Login;
+ReactDOM.render(<WrappedNormalLoginForm />, mountNode);
