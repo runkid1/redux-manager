@@ -3,6 +3,9 @@
     width: 100vw;
     background: url(../../static/bg.jpg) no-repeat center;
     background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #components-form-demo-normal-login .login-form {
     max-width: 300px;
