@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Menu, Icon, Button } from "antd";
 import menu from "../../Redux/menu";
+import './MainRouter.css'
 
 const { SubMenu } = Menu;
 class MainRouter extends Component {
@@ -13,6 +14,7 @@ class MainRouter extends Component {
     return (
       <div>
         <Menu
+          className="MenuHeight"
           onClick={this.handleClick}
           style={{ width: 256 }}
           defaultSelectedKeys={["1"]}

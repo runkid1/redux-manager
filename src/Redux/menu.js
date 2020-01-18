@@ -14,7 +14,7 @@ const menuData = [
           exact:true
         },
         {
-          moduleId: 'A1B1',
+          moduleId: 'A1B2',
           moduleName: '团购列表',
           moduleParentId: 'A1',
           url: Test1
